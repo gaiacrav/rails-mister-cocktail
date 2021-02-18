@@ -1,0 +1,15 @@
+
+<%= @cocktail.name %>
+
+<h2> List of ingredients </h2>
+
+<%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail) class: 'btn btn-primary' %>
+
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+<li> <%= dose.description %> <%= dose.ingredient.name %> </li>
+  <% end %>
+</ul>
+
+
+<%= image_tag "mojito.jpg", alt: "Mojito", width: 200 %>
