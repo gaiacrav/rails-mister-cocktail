@@ -1,8 +1,16 @@
-<h1>Mr. Cocktail! </h1>
-<p> Make and get your favorite cocktail </p>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('background-cocktail.jpeg') %>)">
+<h1> Welcome!</h1>
+</div>
+
 
 <h3> Here the cocktails available today: </h3>
 <% @cocktails.each do |c|  %>
-<%= c.name %>
+  <div class="card" style="width: 14rem;">
+    <img src="..." class="card-img-top" alt="Drink name">
+      <div class="card-body">
+        <h5 class="card-title"> <%= c.name %> </h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Read more about it!</a>
+      </div>
+  </div>
 <% end %>
-
