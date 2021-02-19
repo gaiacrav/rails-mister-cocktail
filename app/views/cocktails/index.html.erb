@@ -9,7 +9,7 @@
       <div class="col-sm-4">
         <div class="card mb-3" style="width: 14rem;">
           <%=# image_tag 'drink.jpg', class: "card-img-top card-cover"%>
-          <%= cl_image_tag("Negroni", width:400, height:300) %>
+          <%= cl_image_tag @cocktail.photo.key, width:400, height:300 %>
           <div class="card-body">
             <h5 class="card-title"> <%= c.name %> </h5>
             <p> <%= link_to "Read about it!", cocktail_path(c), class: "btn btn-info"%> </p>
