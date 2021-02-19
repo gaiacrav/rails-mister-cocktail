@@ -8,7 +8,9 @@
     <% @cocktails.each do |c|  %>
       <div class="col-sm-4">
         <div class="card mb-3" style="width: 14rem;">
-           <%= image_tag 'drink.jpg', class: "card-img-top card-cover"%>
+           <%=# image_tag 'drink.jpg', class: "card-img-top card-cover"%>
+           <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, class: "card-img-top card-cover" %>
+
             <div class="card-body">
               <h5 class="card-title"> <%= c.name %> </h5>
               <p> <%= link_to "Read about it!", cocktail_path(c), class: "btn btn-info"%> </p>
