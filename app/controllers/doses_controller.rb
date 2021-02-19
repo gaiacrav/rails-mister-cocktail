@@ -20,7 +20,13 @@ before_action :set_cocktail, only: [:new, :create]
 
   def destroy
     @dose = Dose.find(params[:id])
-    @dose.destroy
+
+    if @dose.destroy
+      redirect_to cocktail_path(@dose.cocktail), notice: 'You successfully deleted the ingredient!'
+    else
+      redirect_to cocktail_path(@dose.cocktail), alert: 'Could not delete the ingredient :('
+    end
+
   end
 
   private

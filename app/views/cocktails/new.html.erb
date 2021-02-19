@@ -1,0 +1,9 @@
+<%= simple_form_for(@cocktail) do |f| %>
+  <div class="form-group my-3 mx-3 px-3">
+    <%= f.input :name, class: "form-control" %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'btn btn-success my-3'%>
+  </div>
+<% end %>
+
+

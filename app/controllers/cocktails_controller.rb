@@ -27,12 +27,12 @@ class CocktailsController < ApplicationController
   #   @cocktail = Cocktail.find(params[:id])
   #   @cocktail.destroy
 
-  #   # redirect_to _path
+  #   redirect_to rooth_path
   # end
 
   private
 
   def cocktail_name
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end

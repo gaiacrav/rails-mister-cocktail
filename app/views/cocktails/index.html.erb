@@ -1,16 +1,21 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('background-cocktail.jpeg') %>)">
+
+<div class="card-category py-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('drink.jpg') %>)">
 <h1> Welcome!</h1>
 </div>
 
-
-<h3> Here the cocktails available today: </h3>
-<% @cocktails.each do |c|  %>
-  <div class="card" style="width: 14rem;">
-    <img src="..." class="card-img-top" alt="Drink name">
-      <div class="card-body">
-        <h5 class="card-title"> <%= c.name %> </h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Read more about it!</a>
+<div class="container my-3 px-3">
+  <div class="row">
+    <% @cocktails.each do |c|  %>
+      <div class="col-sm-4">
+        <div class="card mb-3" style="width: 14rem;">
+           <%= image_tag 'drink.jpg', class: "card-img-top card-cover"%>
+            <div class="card-body">
+              <h5 class="card-title"> <%= c.name %> </h5>
+              <p> <%= link_to "Read about it!", cocktail_path(c), class: "btn btn-info"%> </p>
+            </div>
+        </div>
       </div>
+    <% end %>
   </div>
-<% end %>
+</div>
+
