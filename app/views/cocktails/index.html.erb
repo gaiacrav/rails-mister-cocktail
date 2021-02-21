@@ -1,6 +1,6 @@
 
 <div class="card-category py-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_tag 'drink.jpg' %>)">
-<h1> Welcome!</h1>
+<h1> Welcome! </h1>
 </div>
 
 <div class="container my-3 px-3">
@@ -11,7 +11,7 @@
           <% if cocktail.photo? %>
             <% background_url = cl_image_path cocktail.photo, width: 400, height: 500, crop: :fill %>
           <% else %>
-            <% cl_image_tag("mojito_uifng7"), class: "card-img-top card-cover"%>
+            <% background_url = cl_image_tag("mojito_uifng7") %>
           <% end %>
           <div class="card-body">
             <h5 class="card-title"> <%= c.name %> </h5>
