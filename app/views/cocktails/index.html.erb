@@ -1,5 +1,5 @@
 
-<div class="card-category py-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('drink.jpg') %>)">
+<div class="card-category py-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_tag 'drink.jpg' %>)">
 <h1> Welcome!</h1>
 </div>
 
@@ -8,7 +8,7 @@
     <% @cocktails.each do |c|  %>
       <div class="col-sm-4">
         <div class="card mb-3" style="width: 14rem;">
-          <%= image_tag 'drink.jpg', class: "card-img-top card-cover"%>
+          <%= cl_image_tag("mojito_uifng7"), class: "card-img-top card-cover"%>
           <div class="card-body">
             <h5 class="card-title"> <%= c.name %> </h5>
             <p> <%= link_to "Read about it!", cocktail_path(c), class: "btn btn-info"%> </p>
