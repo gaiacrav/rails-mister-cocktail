@@ -8,7 +8,11 @@
     <% @cocktails.each do |c|  %>
       <div class="col-sm-4">
         <div class="card mb-3" style="width: 14rem;">
-          <%= cl_image_tag("mojito_uifng7"), class: "card-img-top card-cover"%>
+          <% if cocktail.photo? %>
+            <% background_url = cl_image_path cocktail.photo, width: 400, height: 500, crop: :fill %>
+          <% else %>
+            <% cl_image_tag("mojito_uifng7"), class: "card-img-top card-cover"%>
+          <% end %>
           <div class="card-body">
             <h5 class="card-title"> <%= c.name %> </h5>
             <p> <%= link_to "Read about it!", cocktail_path(c), class: "btn btn-info"%> </p>
