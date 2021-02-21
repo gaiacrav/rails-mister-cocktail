@@ -1,8 +1,9 @@
 
 <div class="my-3 mx-3 px-3">
   <h1> <%=@cocktail.name %> </h1>
+  <%= cl_image_tag @cocktail.photo %>
 
-  <h4> The cocktail is made of: <h4>
+  <h4 class="my-3"> The cocktail is made of: <h4>
 
   <ul>
     <% @cocktail.doses.each do |dose| %>
